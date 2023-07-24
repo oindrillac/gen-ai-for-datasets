@@ -1,5 +1,5 @@
 # gen-ai-for-datasets
-Use generative AI for generating datasets that mimic characteristics of real world datasets.
+_Use generative AI for generating datasets that mimic characteristics of real world datasets._
 
 For use-cases like building customer growth forecasting models in the open without using internal customer data, we can use Generative AI techniques to generate public datasets that mimic internal company/business customer revenue data. 
 
