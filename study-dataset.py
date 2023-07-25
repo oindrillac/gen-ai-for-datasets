@@ -10,6 +10,8 @@ import pandas as pd
 
 # Read the dataset
 df = pd.read_csv('datasets/kaggle-us-population/data.csv')
+metadata = pd.read_csv('datasets/kaggle-us-population/metadata.csv')
+
 
 # Write a function that takes in the dataset and explores columns in the dataset, 
 # explores the shape of the dataset, and explores the first 5 rows of the dataset, 
@@ -22,3 +24,13 @@ def explore_dataset(df):
     print(df.dtypes)
 
 explore_dataset(df)
+
+# View all reports in the metadata
+print(metadata.report.value_counts())
+
+time_series_codes = metadata[metadata.report == 'Housing Vacancies and Homeownership'].time_series_code.tolist()
+time_series_code_dict = {}
+
+# Save all the time_series_codes and dt_desc in form of a dictionary for report 'Housing Vacancies and Homeownership' from metadata
+time_series_code_dict = {time_series_code: metadata[metadata.time_series_code == time_series_code].dt_desc.tolist()[0] for time_series_code in time_series_codes}
+print(time_series_code_dict)
